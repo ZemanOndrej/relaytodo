@@ -1,20 +1,20 @@
 const express = require('express');
-const graphqlHTTP = require('express-graphql');
 const { graphql, buildSchema } = require('graphql')
 const fs = require('fs')
 const app = express();
 const PORT = 4000;
 
-const database = require('./database');
 const schema = buildSchema(fs.readFileSync('./schema.js').toString());
+const resolvers = require('./resolvers');
 
-console.log(database);
+console.log(resolvers);
 
 
 app.use('/graphql', graphqlHTTP({
   schema: schema,
   graphiql: true,
-  // rootValue: database
+  rootValue: resolvers,
+  
 }));
 
 app.listen(PORT);

@@ -13,5 +13,5 @@ type Author{
 
 type Query{
   author(id: ID!): Author
-  authors(): [Author]
+  todos: [Todo]
 }
