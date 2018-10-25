@@ -2,7 +2,7 @@ type Todo{
   id: ID!
   text: String!
   isDone: Boolean!
-  authorId: ID!
+  author: Author!
 }
 
 type Author{
@@ -13,5 +13,6 @@ type Author{
 
 type Query{
   author(id: ID!): Author
-  todos: [Todo]
+  todo(id: ID!): Todo
+  authors: [Author!]
 }
