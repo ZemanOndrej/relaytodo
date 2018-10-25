@@ -6,10 +6,10 @@ const resolvers = {
     authors: () => database.getAuthors(),
   },
   Author: {
-    todos: args => database.getTodosForAuthor(args.id)
+    todos: args => database.getTodosForAuthor(args.id),
   },
   Todo: {
-    author: args => database.getAuthorForTodo(args.id)
+    author: args => database.getAuthor(args.authorId),
   }
 }
 

@@ -9,15 +9,10 @@ const todos = [
 ]
 
 let getAuthor = id => authors.find(a => a.id === id);
-let getAuthors = () => [...authors];
+let getAuthors = () => authors;
 let getTodo = id => todos.find(t => t.id === id);
-let getTodosForAuthor = authorId => todos.filter(t => t.authorId === authorId)
-
-let getAuthorForTodo = id => {
-  const authorId = todos.find(t => t.id).authorId;
-  return authors.find(a => authorId === a);
-}
+let getTodosForAuthor = authorId => todos.filter(t => t.authorId === authorId);
 
 module.exports = {
-  getAuthor, getAuthors, getTodo, getTodosForAuthor, getAuthorForTodo
+  getAuthor, getAuthors, getTodo, getTodosForAuthor
 }
