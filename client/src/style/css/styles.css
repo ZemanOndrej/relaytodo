@@ -1,0 +1,11 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #a2a2a2;
+    color: white;
+    height: 100%;
+}
+
+:global(.root) {
+    height: 100%;
+}
